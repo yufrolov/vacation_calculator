@@ -2,7 +2,7 @@ package com.yufrolov.vacationcalculator.dto;
 
 public class VacationPaycheckDto {
 
-    private final double amount;
+    private final Double amount;
 
     public VacationPaycheckDto(Double amount) {
         this.amount = amount;

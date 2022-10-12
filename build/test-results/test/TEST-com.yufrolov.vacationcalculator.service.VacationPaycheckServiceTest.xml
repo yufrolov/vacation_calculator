@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.yufrolov.vacationcalculator.service.VacationPaycheckServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-10-12T07:04:10" hostname="dmitrii-pc" time="0.024">
+  <properties/>
+  <testcase name="calculateNegativeParamTest()" classname="com.yufrolov.vacationcalculator.service.VacationPaycheckServiceTest" time="0.017"/>
+  <testcase name="calculateVacationValidParamsTest()" classname="com.yufrolov.vacationcalculator.service.VacationPaycheckServiceTest" time="0.001"/>
+  <testcase name="calculateNullParamTest()" classname="com.yufrolov.vacationcalculator.service.VacationPaycheckServiceTest" time="0.001"/>
+  <testcase name="calculateRoundingTest()" classname="com.yufrolov.vacationcalculator.service.VacationPaycheckServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -18,7 +18,7 @@ public class VacationPaycheckController {
     }
 
     @GetMapping("/calculate")
-    public VacationPaycheckDto calculateVacationPaycheck(@RequestParam double averageSalary, @RequestParam int numberVacationDays){
+    public VacationPaycheckDto calculateVacationPaycheck(@RequestParam Double averageSalary, @RequestParam Integer numberVacationDays){
         return vacationPaycheckService.calculateVacation(averageSalary,numberVacationDays);
     }
 
