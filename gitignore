@@ -1,0 +1,7 @@
+### Gradle
+HELP.md
+.gradle
+build/
+
+### IntelliJ IDEA ###
+.idea
