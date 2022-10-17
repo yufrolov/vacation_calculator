@@ -10,7 +10,15 @@ public class CommonExceptionHandler {
 
     @ExceptionHandler({IncorrectInputException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String badRequestHandler(Exception e) {
+    public String incorrectInputExceptionHandler(Exception e) {
         return e.getMessage();
     }
+
+    @ExceptionHandler({ThirdPartyApiException.class})
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public String thirdPartyApiExceptionHandler(Exception e) {
+        return e.getMessage();
+    }
+
+
 }
