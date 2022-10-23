@@ -1,6 +1,6 @@
 package com.yufrolov.vacationcalculator.service;
 
-import com.yufrolov.vacationcalculator.service.isdayoffservice.IsDayOffClient;
+import com.yufrolov.vacationcalculator.service.thirdparty.IsDayOffClient;
 import com.yufrolov.vacationcalculator.utils.DateUtils;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +27,13 @@ public class WorkingDaysService {
         if (startDate == null) {
             return totalDays;
         }
-        var endDate = DateUtils.getCountDateAfter(startDate, totalDays);
+        var endDate = DateUtils.getDateAfterDays(startDate, totalDays);
         var httpRequest = getWorkingDaysRequest(startDate, endDate);
         var response = isDayOffClient.send(httpRequest);
-        return countWorkingDay(response);
+        return countWorkingDays(response);
     }
 
-    private Integer countWorkingDay(String str) {
+    private Integer countWorkingDays(String str) {
         return (int) str.chars().filter(x -> x == '0').count();
     }
 

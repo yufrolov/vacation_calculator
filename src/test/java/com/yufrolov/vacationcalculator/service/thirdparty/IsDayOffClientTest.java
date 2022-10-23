@@ -1,7 +1,6 @@
-package com.yufrolov.vacationcalculator.service;
+package com.yufrolov.vacationcalculator.service.thirdparty;
 
 import com.yufrolov.vacationcalculator.exception.ThirdPartyApiException;
-import com.yufrolov.vacationcalculator.service.isdayoffservice.IsDayOffClient;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
@@ -13,8 +12,7 @@ import java.net.http.HttpRequest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class IsDayOffClientTest {
-
+class IsDayOffClientTest {
     @Test
     void sendTrowExceptionTest() throws IOException, InterruptedException {
         var e = new IOException();

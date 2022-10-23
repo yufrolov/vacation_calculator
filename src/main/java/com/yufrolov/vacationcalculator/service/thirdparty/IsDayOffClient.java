@@ -1,4 +1,4 @@
-package com.yufrolov.vacationcalculator.service.isdayoffservice;
+package com.yufrolov.vacationcalculator.service.thirdparty;
 
 import com.yufrolov.vacationcalculator.exception.ThirdPartyApiException;
 import org.springframework.stereotype.Service;

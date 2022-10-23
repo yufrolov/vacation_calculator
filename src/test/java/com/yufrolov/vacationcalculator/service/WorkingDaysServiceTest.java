@@ -1,6 +1,6 @@
 package com.yufrolov.vacationcalculator.service;
 
-import com.yufrolov.vacationcalculator.service.isdayoffservice.IsDayOffClient;
+import com.yufrolov.vacationcalculator.service.thirdparty.IsDayOffClient;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
@@ -28,10 +28,8 @@ class WorkingDaysServiceTest {
 
     @Test
     void getWorkingDaysNullParamDateTest() {
-        var httpClient = HttpClient.newHttpClient();
-        var isDayClient = new IsDayOffClient(httpClient);
-        Date startDate = null;
-        var service = new WorkingDaysService(isDayClient);
+        var isDayClientMock = Mockito.mock(IsDayOffClient.class);
+        var service = new WorkingDaysService(isDayClientMock);
         var result = service.getWorkingDays(null, 10);
         assertEquals(10, result);
 
