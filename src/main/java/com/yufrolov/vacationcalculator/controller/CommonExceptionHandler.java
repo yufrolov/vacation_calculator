@@ -1,5 +1,7 @@
-package com.yufrolov.vacationcalculator.exception;
+package com.yufrolov.vacationcalculator.controller;
 
+import com.yufrolov.vacationcalculator.exception.IncorrectInputException;
+import com.yufrolov.vacationcalculator.exception.ThirdPartyApiException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -10,13 +12,13 @@ public class CommonExceptionHandler {
 
     @ExceptionHandler({IncorrectInputException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String incorrectInputExceptionHandler(Exception e) {
+    public String incorrectInputExceptionHandler(IncorrectInputException e) {
         return e.getMessage();
     }
 
     @ExceptionHandler({ThirdPartyApiException.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String thirdPartyApiExceptionHandler(Exception e) {
+    public String thirdPartyApiExceptionHandler(ThirdPartyApiException e) {
         return e.getMessage();
     }
 

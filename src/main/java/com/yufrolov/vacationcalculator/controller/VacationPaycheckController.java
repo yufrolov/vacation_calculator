@@ -2,7 +2,6 @@ package com.yufrolov.vacationcalculator.controller;
 
 import com.yufrolov.vacationcalculator.dto.VacationPaycheckDto;
 import com.yufrolov.vacationcalculator.service.VacationPaycheckService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,13 +14,12 @@ public class VacationPaycheckController {
 
     private final VacationPaycheckService vacationPaycheckService;
 
-    @Autowired
     public VacationPaycheckController(VacationPaycheckService vacationPaycheckService) {
         this.vacationPaycheckService = vacationPaycheckService;
     }
 
     @GetMapping("/calculate")
-    public VacationPaycheckDto calculateVacationPaycheck(@RequestParam Double averageSalary, @RequestParam Integer numberVacationDays, @RequestParam @DateTimeFormat(pattern = "yyyyMMdd") Date startDate) {
+    public VacationPaycheckDto calculateVacationPaycheck(@RequestParam Double averageSalary, @RequestParam Integer numberVacationDays, @RequestParam(required = false) @DateTimeFormat(pattern = "yyyyMMdd") Date startDate) {
         return vacationPaycheckService.calculateVacation(averageSalary, numberVacationDays, startDate);
     }
 }

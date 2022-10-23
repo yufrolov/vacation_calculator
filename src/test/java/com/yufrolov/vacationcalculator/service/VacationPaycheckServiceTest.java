@@ -19,7 +19,7 @@ class VacationPaycheckServiceTest {
     void calculateVacationValidParamsTest() throws ParseException {
         var startDate = SIMPLE_DATE_FORMAT.parse("20210624");
         var workingDaysServiceMock = Mockito.mock(WorkingDaysService.class);
-        Mockito.when(workingDaysServiceMock.getWorkingDays(ArgumentMatchers.eq(startDate), ArgumentMatchers.eq(1))).thenReturn(0);
+        Mockito.when(workingDaysServiceMock.getWorkingDays(ArgumentMatchers.eq(startDate), ArgumentMatchers.eq(1))).thenReturn(1);
         var service = new VacationPaycheckService(workingDaysServiceMock);
         var result = service.calculateVacation(29.3, 1, startDate);
         assertEquals(1, result.getAmount());

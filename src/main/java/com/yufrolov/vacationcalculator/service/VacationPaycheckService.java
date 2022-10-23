@@ -2,7 +2,6 @@ package com.yufrolov.vacationcalculator.service;
 
 import com.yufrolov.vacationcalculator.dto.VacationPaycheckDto;
 import com.yufrolov.vacationcalculator.exception.IncorrectInputException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -17,7 +16,6 @@ public class VacationPaycheckService {
 
     private final static BigDecimal AVERAGE_NUMBER_DAYS_MONTH = BigDecimal.valueOf(29.3);
 
-    @Autowired
     public VacationPaycheckService(WorkingDaysService workingDaysService) {
         this.workingDaysService = workingDaysService;
     }
@@ -28,7 +26,7 @@ public class VacationPaycheckService {
         }
         return new VacationPaycheckDto(BigDecimal.valueOf(averageSalary)
                 .divide(AVERAGE_NUMBER_DAYS_MONTH, 2, RoundingMode.HALF_DOWN)
-                .multiply(BigDecimal.valueOf(numberVacationDays - workingDaysService.getWorkingDays(startDate, numberVacationDays)))
+                .multiply(BigDecimal.valueOf(workingDaysService.getWorkingDays(startDate, numberVacationDays)))
                 .doubleValue());
     }
 
