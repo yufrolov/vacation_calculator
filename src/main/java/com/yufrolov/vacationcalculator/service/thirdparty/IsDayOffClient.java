@@ -21,7 +21,7 @@ public class IsDayOffClient {
         try {
             return httpClient.send(request, HttpResponse.BodyHandlers.ofString()).body();
         } catch (IOException | InterruptedException e) {
-            throw new ThirdPartyApiException("Не удалось выполнить запрос", e);
+            throw new ThirdPartyApiException("Не удалось выполнить запрос: "+request.uri().toString(), e);
         }
 
     }
